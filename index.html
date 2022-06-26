@@ -1,68 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#000000">
-    <meta name="description" content="Web site created using CloudBase Webify">
-    <title>Hello Webify！</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-                sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        code {
-            font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-                monospace;
-        }
-        .App {
-            text-align: center;
-        }
-
-        .App-logo {
-            height: 40vmin;
-            pointer-events: none;
-        }
-
-        @media (prefers-reduced-motion: no-preference) {
-            .App-logo {
-                animation: App-logo-spin infinite 20s linear;
-            }
-        }
-
-        .App-header {
-            background-color: #efefef;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: calc(10px + 2vmin);
-            color: black;
-        }
-
-        .App-link {
-            color: #108ee9;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>OrderPage</title>
+    <link rel="stylesheet" href="orderPage.css">
+    <link rel="stylesheet" href="iconfont/iconfont.css">
 </head>
-
 <body>
-    <div id="root">
-        <div class="App">
-            <header class="App-header">
-                <img src="https://main.qcloudimg.com/raw/2f3b21706c37e8685efe5c60b26ceb24.png" class="App-logo" alt="logo">
-                <p>Welcome to Webify！</p>
-                <a class="App-link" href="https://webify.cloudbase.net/"
-                    target="_blank" rel="noopener noreferrer">webify.cloudbase.net</a>
-            </header>
+<header>
+    <div class="headerL">
+        <div class="logo"></div>
+        <div class="name">义乌市镔嘉进出口有限公司</div>
+    </div>
+    <div class="headerM">
+        <ul>
+            <li class="home_page">首页</li>
+            <li class="order_page"><a href="orderPage.html">订单</a></li>
+            <li class="progress_page">进程</li>
+            <li class="factory_page">工厂</li>
+            <li class="set_page">设置</li>
+        </ul>
+    </div>
+    <div class="headerR">
+        <div class="headPhotoBox" >
+            <div class="headPhoto"></div>
+            <ul>
+                <li class="personal">个人信息</li>
+                <li>退出账号</li>
+            </ul>
         </div>
     </div>
-</body>
+</header>
+<div class="body">
+    <div class="body_left">
+        <ul>
+            <li><span class="iconfont icon-file-delete"></span>全部订单</li>
+            <li><span class="iconfont icon-calendar"></span>正常订单</li>
+            <li><span class="iconfont icon-check-item"></span>已完成</li>
+            <li><span class="iconfont icon-close"></span>已取消</li>
+            <li><span class="iconfont icon-ashbin"></span>回收站</li>
+            <li><span class="iconfont icon-favorite"></span>收藏</li>
+        </ul>
+    </div>
+    <div class="body_right">
+        <div class="right_head">
+            <div class="right_head_left">
+                <div class="new_order_box">
+                    <span class="iconfont icon-add-circle new_order_icon"></span><span class="new_order">添加订单</span>
+                </div>
+                <div class="new_orders_box">
+                    <span class="iconfont icon-copy new_orders_icon"></span><span class="new_orders">添加多个订单</span>
+                </div>
+                <div class="refresh_box">
+                    <span class="iconfont icon-refresh refresh_icon"></span><span class="refresh">刷新列表</span>
+                </div>
+            </div>
+            <div class="right_head_right">
+                <div class="screen_box">
+                    <span class="iconfont icon-filter screen_icon"></span><span class="screen">筛选</span>
+                </div>
+                <div class="search iconfont icon-search search_icon">
+                    <form>
+                        <input class="search_input" type="text" placeholder="输入您要查找的内容">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="right_body">
+<!--            <div class="table_head">-->
+<!--                <span class="checkbox_all" style="display: inline-block">-->
+<!--                    <form action="" name="table_checkbox">-->
+<!--                        <input type="checkbox">-->
+<!--                    </form>-->
+<!--                </span>-->
+<!--                <span class="table_head_title table_head1">订单号</span>-->
+<!--                <span class="table_head_title table_head2"><span class="split"></span>合同号</span>-->
+<!--                <span class="table_head_title table_head3"><span class="split"></span>客户名</span>-->
+<!--                <span class="table_head_title table_head3"><span class="split"></span>客户部门</span>-->
+<!--            </div>-->
+            <span class="table_line"></span>
+            <div class="table_body" id="table_body">
+                <table>
+                    <thead>
+                        <tr id="head_tr">
+                            <td><input type="checkbox" name="all_check" id="all_check"></td>
+                            <td>订单号</td>
+                            <td>合同号</td>
+                            <td>合同号</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" name="all_check" class="each_check"></td>
+                            <td id="td1">56</td>
+                            <td id="td2">99</td>
+                            <td id="td3">99</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="all_check" class="each_check"></td>
+                            <td>23</td>
+                            <td>99</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="all_check" class="each_check"></td>
+                            <td>23</td>
+                            <td>99</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="all_check" class="each_check"></td>
+                            <td>23</td>
+                            <td>99</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="all_check" class="each_check"></td>
+                            <td>23</td>
+                            <td>99</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="all_check" class="each_check"></td>
+                            <td>23</td>
+                            <td>99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
+        </div>
+    </div>
+</div>
+<script>
+    //选中：
+    //分析步骤：
+    //1.获取第一个input的值，赋值一个变量；
+    //2.获取其他input的值，赋值一个变量；
+    //3.通过this.checked属性，将全选按钮的checked的值，循环赋值给其他按钮；
+    let all = document.getElementById('all_check');
+    let input = document.getElementsByClassName('each_check');
+    all.onclick = function () {
+        for (let i = 0; i < input.length; i++) {
+            input[i].checked = all.checked;
+        }
+    }
+    //案例：对数组内数字进行排序：
+    // let arr=[900,600,3000,400,5,1,2000,7,800,10,15,16,80,91,152,66,511,1255,142];
+    //
+    // //1. 创建一个外循环，意义是第几个数字开始对比
+    // for (let i=0;i<arr.length/2;i++){
+    //     for (let a=0;a<arr.length-i;a++){
+    //         if (arr[a]>arr[a+1]){
+    //             let temp=arr[a];
+    //             arr[a]=arr[a+1];
+    //             arr[a+1]=temp;
+    //         }
+    //     }
+    //     console.log(arr);
+    // }
+    // console.log(arr);
+    document.getElementById('head_tr').innerHTML="<tr id=\"head_tr\">\n" +
+        "<td><input type=\"checkbox\" name=\"all_check\" id=\"all_check\"></td>\n" +
+        "<td>订单号</td>\n" +
+        "<td>合同号</td>\n" +
+        "<td>合同号sss</td>\n" +
+        "<td>合同号sss</td>\n" +
+        "<td>合同号sss</td>\n" +
+        "<td>合同号sss</td>\n" +
+        "</tr>"
+</script>
+</body>
 </html>
